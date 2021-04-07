@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create</title>
+
+</head>
+<body>
+<form action="" method="POST">
+  {% csrf_token %}
+	<input type="text" name="title" placeholder="enter title"/>
+	<input type="text" name="description" placeholder="description"/>
+	
+	<input type="Submit" />
+
+
+</form>
+      {% for obj in Objects %}
+         <h1> Title is {{obj.title}}</h1>
+         <h1> Description is {{obj.description}}</h1>    
+         <form action="delete/{{obj.id}}/"  method="POST">
+         	 {% csrf_token %}
+           <input type="Submit" value="Delete" >
+         </form>
+         <br>
+          <form action="update/{{obj.id}}/"  method="POST">
+         	 {% csrf_token %}
+           <input type="Submit" value="Update" >
+         </form>
+       {% endfor %}
+       
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete</title>
+</head>
+<body>
+
+        <form action="{{obj.id}}" method="GET">
+        	{% csrf_token %}
+        <input type="text" name="title" placeholder="{{obj.title}}"/>
+        <input type="text" name="description" placeholder="{{obj.description}}"/>
+        <input type="Submit" value="Submit">
+    </form>
+</body>
+</html>
